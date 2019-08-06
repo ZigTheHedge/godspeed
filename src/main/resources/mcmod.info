@@ -1,0 +1,16 @@
+[
+{
+  "modid": "godspeed",
+  "name": "Godspeed",
+  "description": "Special for RustamDobryi",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ZigTheHedge"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
