@@ -2,6 +2,7 @@ package com.cwelth.godspeed;
 
 import com.cwelth.godspeed.proxy.CommonProxy;
 import net.minecraft.block.Block;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -24,12 +25,14 @@ public class EventHandlers {
             {
                 Block biq = Block.REGISTRY.getObject(new ResourceLocation(entry.getKey()));
                 if(player.world.getBlockState(player.getPosition().down()).getBlock() == biq) {
-                    player.capabilities.setPlayerWalkSpeed(entry.getValue().floatValue());
+                    player.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(entry.getValue().floatValue());
+                    //player.capabilities.setPlayerWalkSpeed();
                     isFound = true;
                 }
             }
             if(!isFound)
-                player.capabilities.setPlayerWalkSpeed(0.1F);
+                player.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.1F);
+                //player.capabilities.setPlayerWalkSpeed(0.1F);
 
         }
     }
